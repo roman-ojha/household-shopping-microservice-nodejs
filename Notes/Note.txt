@@ -1,12 +1,13 @@
 
 
 *) Current Design pattern:
-    -> API Layer:
-        -> responsible for handling & validating request
-        -> API layer doesn't know about what is happening in repository layer
-    -> Service Layer:
-        -> responsible for business logic
-    -> Repository Layer:
-        -> Data logic
-        -> responsible for interacting with database
-        -> Now if we will change the database like from SQL to NoSQL then we only have to change the data structure and data fetching logic in repository layer and the business logic will stay same and no need to touch api layer as well.
+    -> Currently even for the monolithic application we are using this design pattern:
+        -> API Layer:
+            -> responsible for handling & validating request
+            -> API layer doesn't know about what is happening in repository layer
+        -> Service Layer:
+            -> responsible for business logic
+        -> Repository Layer:
+            -> Data logic
+            -> responsible for interacting with database
+            -> Now if we will change the database like from SQL to NoSQL then we only have to change the data structure and data fetching logic in repository layer and the business logic will stay same and no need to touch api layer as well.
