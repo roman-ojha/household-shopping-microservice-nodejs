@@ -11,3 +11,12 @@
             -> Data logic
             -> responsible for interacting with database
             -> Now if we will change the database like from SQL to NoSQL then we only have to change the data structure and data fetching logic in repository layer and the business logic will stay same and no need to touch api layer as well.
+            
+
+*) Microservice project:
+    -> start from '../microservice' folder
+    -> where:
+        customer: microservice for customer api
+        products: microservice for products api
+        shopping: microservice for shopping api
+        gateway: for routing the request to the respective microservice (api gateway)

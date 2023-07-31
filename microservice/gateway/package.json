@@ -1,21 +1,20 @@
 {
-  "name": "shopping_app_monolithic",
+  "name": "product_microservice",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "author": "roman-ojha",
+  "license": "MIT",
   "scripts": {
-    "dev": "env-cmd -f .env.dev nodemon src/index.js",
-    "start": "env-cmd -f .env.prod nodemon src/index.js"
+    "dev": "env-cmd -f .env.dev nodemon index.js",
+    "start": "env-cmd -f .env.prod nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "env-cmd": "^10.1.0",
     "express": "^4.17.1",
+    "express-http-proxy": "^1.6.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.2",
     "uuid": "^8.3.2",

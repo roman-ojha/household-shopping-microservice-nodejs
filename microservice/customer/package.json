@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "roman-ojha",
   "license": "MIT",
+  "scripts": {
+    "dev": "env-cmd -f .env.dev nodemon index.js",
+    "start": "env-cmd -f .env.prod nodemon index.js"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
