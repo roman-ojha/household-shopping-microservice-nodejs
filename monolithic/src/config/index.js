@@ -1,11 +1,13 @@
-const dotEnv = require("dotenv");
+// const dotEnv = require("dotenv");
 
-if (process.env.NODE_ENV !== "prod") {
-  const configFile = `./.env.${process.env.NODE_ENV}`;
-  dotEnv.config({ path: configFile });
-} else {
-  dotEnv.config();
-}
+// if (process.env.NODE_ENV !== "prod") {
+//   const configFile = `./.env.${process.env.NODE_ENV}`;
+//   dotEnv.config({ path: configFile });
+// } else {
+//   dotEnv.config();
+// }
+
+// console.log(process.env.PORT);
 
 module.exports = {
   PORT: process.env.PORT,
