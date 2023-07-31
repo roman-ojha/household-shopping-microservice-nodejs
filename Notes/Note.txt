@@ -20,3 +20,9 @@
         products: microservice for products api
         shopping: microservice for shopping api
         gateway: for routing the request to the respective microservice (api gateway)
+        
+
+    -> Let's segregate the all the service for now:
+        *) Models:
+            => Customer:
+                -> on customer there will only be Customer & Address model
