@@ -5,8 +5,8 @@
   "author": "roman-ojha",
   "license": "MIT",
   "scripts": {
-    "dev": "env-cmd -f .env.dev nodemon index.js",
-    "start": "env-cmd -f .env.prod nodemon index.js"
+    "dev": "env-cmd -f .env.dev nodemon src/index.js",
+    "start": "env-cmd -f .env.prod nodemon src/index.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
