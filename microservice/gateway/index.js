@@ -7,10 +7,13 @@ const proxy = require("express-http-proxy");
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
-app.use("/customer", proxy("http://locahost"));
+// redirecting request to it's specific apis
+app.use("/customer", proxy(process.env.CUSTOMER_API_BASE_URL));
+app.use("/shopping", proxy(process.env.SHOPPING_API_BASE_URL));
+app.use("/", proxy(process.env.PRODUCTS_API_BASE_URL)); // product endpoint
 
 app.listen(PORT, () => {
   console.log(`Running on http://localhost:${PORT}`);
