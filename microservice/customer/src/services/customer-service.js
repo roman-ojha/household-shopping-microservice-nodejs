@@ -156,7 +156,7 @@ class CustomerService {
   }
 
   async SubscribeEvents(payload) {
-    // Now this service handle the communication with the other services using some http call or some web hook or some message broker inside this service
+    // Now this service handle the communication with the other services done with some http call or some web hook or some message broker inside this service
 
     const { event, data } = payload;
 
