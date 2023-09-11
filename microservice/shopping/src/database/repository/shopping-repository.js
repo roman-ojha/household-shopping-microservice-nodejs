@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { OrderModel, CartModel } = require("../models");
 const { v4: uuidv4 } = require("uuid");
-const { APIError, BadRequestError } = require("../utils/app-errors");
+const { APIError, BadRequestError } = require("../../utils/app-errors");
 const { STATUS_CODES } = require("../../../../customer/src/utils/app-errors");
 
 //Dealing with data base operations

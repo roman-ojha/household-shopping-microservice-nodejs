@@ -55,14 +55,18 @@ module.exports.FormateData = (data) => {
 // Here we are using API to interact with other microservice
 module.exports.PublishCustomerEvent = async (payload) => {
   // we have to request to 'customer/app-events' endpoint to interact with 'customer'
-  axios.post("https://locahost:8000/customer/app-events", {
-    payload,
-  });
+  try {
+    axios.post("http://localhost:8000/customer/app-events", {
+      payload,
+    });
+  } catch (err) {
+    throw err;
+  }
 };
 
 module.exports.PublishShoppingEvent = async (payload) => {
   // we have to request to 'shopping/app-events' endpoint to interact with 'customer'
-  axios.post("https://locahost:8000/shopping/app-events", {
+  axios.post("http://localhost:8000/shopping/app-events", {
     payload,
   });
 };

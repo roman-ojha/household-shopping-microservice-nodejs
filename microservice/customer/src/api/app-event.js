@@ -11,7 +11,7 @@ module.exports = (app) => {
     // we can see all of the SubscriptEvent logic on '../services/customer-service.js', 'SubscriptEvent' service method
     service.SubscribeEvents(payload);
 
-    console.log("============= Shopping Service received event ==========");
+    console.log("============= Customer Service received event ==========");
     return res.status(200).json(payload);
   });
 };
