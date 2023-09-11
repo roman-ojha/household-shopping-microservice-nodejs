@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const axios = require("axios");
 
 const { APP_SECRET } = require("../config");
 
@@ -48,4 +49,20 @@ module.exports.FormateData = (data) => {
   } else {
     throw new Error("Data Not found!");
   }
+};
+
+// function that will interact with 'customer' microservice from 'product' microservice
+// Here we are using API to interact with other microservice
+module.exports.PublishCustomerEvent = async (payload) => {
+  // we have to request to 'customer/app-events' endpoint to interact with 'customer'
+  axios.post("https://locahost:8000/customer/app-events", {
+    payload,
+  });
+};
+
+module.exports.PublishShoppingEvent = async (payload) => {
+  // we have to request to 'shopping/app-events' endpoint to interact with 'customer'
+  axios.post("https://locahost:8000/shopping/app-events", {
+    payload,
+  });
 };
