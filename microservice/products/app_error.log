@@ -1,2 +1,3 @@
 {"level":"error","message":"Mon Sep 11 2023 21:31:37 GMT+0545 (Nepal Time)-{\"expose\":true,\"statusCode\":400,\"status\":400,\"body\":\"{\\n    \\\"name\\\":\\\"Langra Mango\\\",\\n    \\\"desc\\\":\\\"great Quality of Mango\\\",\\n    \\\"type\\\":\\\"fruits\\\",\\n    \\\"banner\\\":\\\"http://codergogoi.com/youtube/images/langra.jpeg\\\",\\n    \\\"unit\\\":1,\\n    \\\"price\\\":280, \\n    \\\"available\\\":true,\\n    \\\"suplier\\\":\\\"Golden seed firming\\\"\\n},\",\"type\":\"entity.parse.failed\"}","private":true}
 {"level":"error","message":"Mon Sep 11 2023 22:39:39 GMT+0545 (Nepal Time)-{}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:57:53 GMT+0545 (Nepal Time)-{}","private":true}
