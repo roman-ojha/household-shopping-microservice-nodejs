@@ -2,13 +2,10 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const OrderSchema = new Schema(
+// Creating Cart model schema
+const CartSchema = new Schema(
   {
-    orderId: String,
-    customerId: String,
-    amount: Number,
-    status: String,
-    txnId: String,
+    customerId: { type: String },
     items: [
       {
         product: {
