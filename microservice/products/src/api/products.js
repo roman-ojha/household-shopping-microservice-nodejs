@@ -61,18 +61,21 @@ module.exports = (app) => {
     }
   });
 
-  // changes from Monolithic
   app.put("/wishlist", UserAuth, async (req, res, next) => {
     const { _id } = req.user;
 
-    // get payload
-
-    // to send to customer service
+    // here we will create the payload to pass on 'customer' microservice
+    const { data } = await service.GetProductPayload(
+      _id,
+      { productId: req.body._id },
+      "ADD_TO_WISHLIST" // NOTE that this event name needs to match with the the Customer Service Event name
+    );
 
     try {
-      const product = await service.GetProductById(req.body._id);
-      const wishList = await customerService.AddToWishlist(_id, product);
-      return res.status(200).json(wishList);
+      // Now here we are passing the return payload which is as 'data' to the Customer Event which will interact with customer microservice
+      PublishCustomerEvent(data);
+      // to send to customer service
+      return res.status(200).json(data.data);
     } catch (err) {}
   });
 
