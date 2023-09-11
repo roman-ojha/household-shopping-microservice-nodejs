@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "fc135fb5-a70c-494f-8264-7ac6a2775ace",
+		"name": "Shopping NodeJS Microservice Tutorial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16410842"
+	},
+	"item": [
+		{
+			"name": "Shopping",
+			"item": [
+				{
+					"name": "Shopping_Cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_BASE_URL}}/shopping/cart",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"shopping",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping_Create_Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"txnNumber\": \"afs25ww5fdsafd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_BASE_URL}}/shopping/order",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"shopping",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping_Orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_BASE_URL}}/shopping/orders",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"shopping",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Customer_Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"test4@test.com\",\n    \"password\":\"12345\",\n    \"phone\":\"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_BASE_URL}}/customer/signup",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"customer",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer_Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"test4@test.com\",\n    \"password\":\"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_BASE_URL}}/customer/login",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer_Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_BASE_URL}}/customer/profile",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"customer",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer_Shopping_details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_BASE_URL}}/customer/shoping-details",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"customer",
+								"shoping-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer_Add_Address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"street\": \"Mumbai\", \n   \"postalCode\":\"400066\", \n   \"city\":\"Mumbai\",\n   \"country\":\"India\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_BASE_URL}}/customer/address",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"customer",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer_Wishlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_BASE_URL}}/customer/wishlist",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"customer",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Event Listener",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payload\": {\n        \"event\": \"TESTING\",\n        \"data\": {}\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_BASE_URL}}/customer/app-events",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"customer",
+								"app-events"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Products_Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Olive Oil\",\n    \"desc\":\"great Quality of Oil\",\n    \"type\":\"oils\",\n    \"banner\":\"http://codergogoi.com/youtube/images/oliveoil.jpg\",\n    \"unit\":1,\n    \"price\":400, \n    \"available\":true,\n    \"suplier\":\"Golden seed firming\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_BASE_URL}}/product/create",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products_Selected",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\":[\n        \"611badc2eeef961f9d33f2e4\",\n        \"611badc2eeef961f9d33f2e4\"\n    ]    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_BASE_URL}}/ids",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"ids"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products_Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_BASE_URL}}/category/fruits",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"category",
+								"fruits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products_View",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_BASE_URL}}/",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products_Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_BASE_URL}}/64fefb4d96a89928d0d77316",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"64fefb4d96a89928d0d77316"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add_To_Wishlist",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\": \"64fefb4d96a89928d0d77316\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_BASE_URL}}/wishlist",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add_To_Cart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\": \"64ff3645bf4ede3cf4d6bebd\",\n    \"qty\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_BASE_URL}}/cart",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_From_Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_BASE_URL}}/cart/64ff46d48eadb40dcc23df27",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"cart",
+								"64ff46d48eadb40dcc23df27"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove_From_Wishlist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_BASE_URL}}/wishlist/64fefb4d96a89928d0d77316",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"wishlist",
+								"64fefb4d96a89928d0d77316"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3Q0QHRlc3QuY29tIiwiX2lkIjoiNjRmZWZhYjY1ZDdlMjYyYWU0ZjdlNmUyIiwiaWF0IjoxNjk0NDMyMDE0LCJleHAiOjE2OTcwMjQwMTR9.9vtzoKlhjAQH-kbSXdP1-6awMxDK0qBnymt4MXuea0A",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

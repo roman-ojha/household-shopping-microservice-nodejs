@@ -12,7 +12,6 @@ module.exports = (app) => {
     try {
       const { data } = await service.PlaceOrder({ _id, txnNumber });
 
-      console.log("Order Placed ============", data);
       const payload = await service.GetOrderPayload(_id, data, "CREATE_ORDER");
 
       // PublishCustomerEvent(payload)
