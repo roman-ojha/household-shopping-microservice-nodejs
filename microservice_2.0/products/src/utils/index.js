@@ -103,6 +103,6 @@ module.exports.SubscribeMessage = async (channel, service, binding_key) => {
     // now here we will consumer the data.
     console.log("received data");
     console.log(data.content.toString());
-    channel.ack(data);
+    channel.ack(data); // We will acknowledge that we get the data
   });
 };

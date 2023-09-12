@@ -56,6 +56,8 @@ module.exports.FormateData = (data) => {
   }
 };
 
+/* Message Broker */
+
 module.exports.CreateChannel = async () => {
   try {
     const connection = await amqplib.connect(MESSAGE_BROKER_URL);
@@ -69,12 +71,15 @@ module.exports.CreateChannel = async () => {
 
 module.exports.SubscribeMessage = async (channel, service) => {
   // for the customer service we are listing to only one binding key which is 'CUSTOMER_BINDING_KEY'
+
   try {
     const appQueue = await channel.assertQueue(QUEUE_NAME);
     channel.bindQueue(appQueue.queue, EXCHANGE_NAME, CUSTOMER_BINDING_KEY);
     channel.consume(appQueue.queue, (data) => {
       console.log("received data");
       console.log(data.content.toString());
+      // when whenever we will going to get the message from other message broker published from other services we will going to send that payload data into the 'SubscribeEvents' method on '../services/customer-service.js' which will trigger the right Service according to the payload data
+      service.SubscribeEvents(data.content.toString());
       channel.ack(data);
     });
   } catch (err) {

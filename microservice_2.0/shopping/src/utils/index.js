@@ -86,6 +86,8 @@ module.exports.SubscribeMessage = async (channel, service) => {
   channel.consume(appQueue.queue, (data) => {
     console.log("received data");
     console.log(data.content.toString());
+    // when whenever we will going to get the message from other message broker published from other services we will going to send that payload data into the 'SubscribeEvents' method on '../services/customer-service.js' which will trigger the right Service according to the payload data
+    service.SubscribeEvents(data.content.toString());
     channel.ack(data);
   });
 };
