@@ -1,8 +1,11 @@
 const ProductService = require("../services/product-service");
-const { PublishCustomerEvent, PublishShoppingEvent } = require("../utils");
+// rather then using Publish event that we did previous on '../../../../microservice' project we don't require now we will need to use rabbitMQ publisher
+const { PublishMessage } = require("../utils");
 const UserAuth = require("./middlewares/auth");
+const { CUSTOMER_BINDING_KEY, SHOPPING_BINDING_KEY } = require("../config");
 
-module.exports = (app) => {
+module.exports = (app, channel) => {
+  // 'channel' is the rabbitMQ channel
   const service = new ProductService();
 
   app.post("/product/create", async (req, res, next) => {
@@ -67,7 +70,10 @@ module.exports = (app) => {
         { productId: req.body._id },
         "ADD_TO_WISHLIST"
       );
-      PublishCustomerEvent(data);
+      // Publishing message through rabbitMQ
+      // Because we want to publish to Customer service we will use 'CUSTOMER_BINDING_KEY'
+      // We need to pass 'data' we string because we are publishing message
+      PublishMessage(channel, CUSTOMER_BINDING_KEY, JSON.stringify(data));
       return res.status(200).json(data.data);
     } catch (err) {}
   });
@@ -82,7 +88,9 @@ module.exports = (app) => {
         { productId },
         "REMOVE_FROM_WISHLIST"
       );
-      PublishCustomerEvent(data);
+
+      // Publishing message to customer service
+      PublishMessage(channel, CUSTOMER_BINDING_KEY, JSON.stringify(data));
       return res.status(200).json(data.data.product);
     } catch (err) {
       next(err);
@@ -99,8 +107,10 @@ module.exports = (app) => {
         "ADD_TO_CART"
       );
 
-      PublishCustomerEvent(data);
-      PublishShoppingEvent(data);
+      // Publishing message to customer service
+      PublishMessage(channel, CUSTOMER_BINDING_KEY, JSON.stringify(data));
+      // Publishing message to Shopping service
+      PublishMessage(channel, SHOPPING_BINDING_KEY, JSON.stringify(data));
 
       const response = {
         product: data.data.product,
@@ -123,8 +133,11 @@ module.exports = (app) => {
         { productId },
         "REMOVE_FROM_CART"
       );
-      PublishCustomerEvent(data);
-      PublishShoppingEvent(data);
+
+      // Publishing message to customer service
+      PublishMessage(channel, CUSTOMER_BINDING_KEY, JSON.stringify(data));
+      // Publishing message to Shopping service
+      PublishMessage(channel, SHOPPING_BINDING_KEY, JSON.stringify(data));
 
       const response = {
         product: data.data.product,
