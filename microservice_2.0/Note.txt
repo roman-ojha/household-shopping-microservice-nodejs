@@ -1,0 +1,18 @@
+=> The problem with '../microservice' project is:
+    -> right now we are trying to do a communication through http call './01_Microservices_Http.png'
+    -> If one of our service go down then we can't revive the previous done event to that microservice because that microservice is not reachable.
+    -> To get ride of this kind of situation message broker come into picture.
+
+*) How message broker is solving above problem:
+    -> In the existing communication system when publisher let's say for now 'product' is publishing some kind of the event or payload which is directly calling the webhook and the webhook is called then the 'customer' service will update the data into database.
+    -> './02_Existing_System.PNG'
+    -> In this kind of system if the all the service are online the it is fine but when the Subscriber service is down or the Publisher service is down then the problem aries.
+    -> So, when ever Publisher send the event to Subscriber and if the Subscriber is down then it won't be able to update the database of Subscriber service, and when it will up an running after some time but Subscriber service don't know what are the event that get triggered from the publisher service.
+    -> In this kind of scenario Message broker come into picture.
+    *) How Message Broker work:
+        -> './03_Microsercie_with_Message_broker.PNG'
+        -> So, Publisher service and Subscriber service are communicating through a specific channel.
+        -> Channel have some kind of a setting which is to bind the Publisher service with the subscriber service.
+        -> When ever publisher needs to publish to Subscriber service then it will publish to Channel which is binding to the subscriber.
+        -> whether or not subscriber service are down that doesn't matter if Subscriber service come back up then all the payload and event that publisher publish will get deliver to the Subscriber service But if the Subscriber service is not online and is down then the specific message and data will get stored in the temporary storage in the message broker.
+        -> But whenever the customer service is back online then it will deliver all of those event to Subscriber service.
