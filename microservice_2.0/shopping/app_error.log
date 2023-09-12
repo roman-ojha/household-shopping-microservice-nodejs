@@ -1,0 +1,16 @@
+{"level":"error","message":"Mon Sep 11 2023 22:57:37 GMT+0545 (Nepal Time)-{\"message\":\"connection timed out\",\"reason\":{\"type\":\"ReplicaSetNoPrimary\",\"setName\":\"atlas-aaenom-shard-0\",\"maxSetVersion\":2,\"maxElectionId\":\"7fffffff0000000000000352\",\"servers\":{},\"stale\":false,\"compatible\":true,\"compatibilityError\":null,\"logicalSessionTimeoutMinutes\":30,\"heartbeatFrequencyMS\":10000,\"localThresholdMS\":15,\"commonWireVersion\":17}}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:04:37 GMT+0545 (Nepal Time)-{}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:05:00 GMT+0545 (Nepal Time)-{}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:05:51 GMT+0545 (Nepal Time)-{}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:07:05 GMT+0545 (Nepal Time)-{}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:07:57 GMT+0545 (Nepal Time)-{}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:11:05 GMT+0545 (Nepal Time)-{\"name\":\"Data Note Found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:15:37 GMT+0545 (Nepal Time)-{}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:17:00 GMT+0545 (Nepal Time)-{}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:19:38 GMT+0545 (Nepal Time)-{}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:20:30 GMT+0545 (Nepal Time)-{}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:21:37 GMT+0545 (Nepal Time)-{}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:22:31 GMT+0545 (Nepal Time)-{}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:30:52 GMT+0545 (Nepal Time)-{}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:36:13 GMT+0545 (Nepal Time)-{}","private":true}
+{"level":"error","message":"Mon Sep 11 2023 23:38:59 GMT+0545 (Nepal Time)-{}","private":true}

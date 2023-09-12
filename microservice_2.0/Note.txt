@@ -16,3 +16,15 @@
         -> When ever publisher needs to publish to Subscriber service then it will publish to Channel which is binding to the subscriber.
         -> whether or not subscriber service are down that doesn't matter if Subscriber service come back up then all the payload and event that publisher publish will get deliver to the Subscriber service But if the Subscriber service is not online and is down then the specific message and data will get stored in the temporary storage in the message broker.
         -> But whenever the customer service is back online then it will deliver all of those event to Subscriber service.
+
+*) About Project:
+    *) Microservice 2.0:
+        -> './03_Microservice_with_Message_broker.PNG'
+        -> Now we will work from '../microservice' source code and we will introduce Nginx as reverse proxy which will be helping us to reaching our services and our service will communicating through message broker where 'publisher' and 'subscriber' come into the picture
+    *) Deployment:
+        -> './04_Microservice_Deployment.PNG'
+        -> After that we will look into the Deployment Part, where we will dockerize our project and we will setup our reverse proxy and we will deploy the whole thing in AWS and as well as we will setup the Continuous deployment setup.
+        -> So when ever we are merging our code to master branch it will deploy it to AWS.
+        -> and AWS will take care of exposing the endpoints where client can reach to the services.
+
+    -> Previously we have used '../microservice/gateway' to forward the request to the specific service but now we will not going to use this to handle the api gateway we will use something else instead of this
