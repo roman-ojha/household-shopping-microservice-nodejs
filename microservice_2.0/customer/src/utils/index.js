@@ -69,11 +69,15 @@ module.exports.CreateChannel = async () => {
 
 module.exports.SubscribeMessage = async (channel, service) => {
   // for the customer service we are listing to only one binding key which is 'CUSTOMER_BINDING_KEY'
-  const appQueue = await channel.assertQueue(QUEUE_NAME);
-  channel.bindQueue(appQueue.queue, EXCHANGE_NAME, CUSTOMER_BINDING_KEY);
-  channel.consume(appQueue, (data) => {
-    console.log("received data");
-    console.log(data.content.toString());
-    channel.ack(data);
-  });
+  try {
+    const appQueue = await channel.assertQueue(QUEUE_NAME);
+    channel.bindQueue(appQueue.queue, EXCHANGE_NAME, CUSTOMER_BINDING_KEY);
+    channel.consume(appQueue.queue, (data) => {
+      console.log("received data");
+      console.log(data.content.toString());
+      channel.ack(data);
+    });
+  } catch (err) {
+    throw err;
+  }
 };

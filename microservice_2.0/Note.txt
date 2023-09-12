@@ -28,3 +28,16 @@
         -> and AWS will take care of exposing the endpoints where client can reach to the services.
 
     -> Previously we have used '../microservice/gateway' to forward the request to the specific service but now we will not going to use this to handle the api gateway we will use something else instead of this
+    
+    -> For the Message Broker we will going to use RabbitMQ:
+        -> https://www.rabbitmq.com/
+        -> We have to choice:
+            1. Local for that we can download RabbitMQ
+            2. Their cloud service.
+    -> To use rabbitmq in project we have to install this library:
+        -> https://www.npmjs.com/package/amqplib
+    -> to access rabbitmq in browser: http://localhost:15672/, username: guest, password: guest
+
+    -> First we will integrate rabbitmq and create channel, publisher and subscriber on './products/src/utils/index.js'
+        -> After that we will use that publisher on './products/src/api/products.js'
+    -> After that we will integrate 

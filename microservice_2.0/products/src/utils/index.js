@@ -84,6 +84,7 @@ module.exports.PublishMessage = async (channel, binding_key, message) => {
   try {
     // so here now we will going to publish the specific message using created 'channel' with the help of the 'EXCHANGE_NAME' and the 'binding_key'
     await channel.publish(EXCHANGE_NAME, binding_key, Buffer.from(message));
+    console.log("Message hand been sent:" + message);
   } catch (err) {
     throw err;
   }
@@ -98,7 +99,7 @@ module.exports.SubscribeMessage = async (channel, service, binding_key) => {
   const appQueue = await channel.assertQueue("QUEUE_NAME");
   // here whatever queue we are asserting we will going to bind with queue with 'EXCHANGE_NAME' & 'binding_key' so that we can be able to receive the data that what ever will get published by the publisher
   channel.bindQueue(appQueue.queue, EXCHANGE_NAME, binding_key);
-  channel.consume(appQueue, (data) => {
+  channel.consume(appQueue.queue, (data) => {
     // now here we will consumer the data.
     console.log("received data");
     console.log(data.content.toString());

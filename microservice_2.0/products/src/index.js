@@ -11,6 +11,7 @@ const StartServer = async () => {
 
   // Creating RabbitMQ channel
   const channel = await CreateChannel();
+  // console.log(channel);
 
   await expressApp(app, channel);
 

@@ -1,8 +1,12 @@
 const CustomerService = require("../services/customer-service");
 const UserAuth = require("./middlewares/auth");
+const { SubscribeMessage } = require("../utils");
 
-module.exports = (app) => {
+module.exports = (app, channel) => {
   const service = new CustomerService();
+
+  // using rabbitMQ 'channel' we will going to subscribe to the messages
+  SubscribeMessage(channel, service);
 
   app.post("/signup", async (req, res, next) => {
     try {
