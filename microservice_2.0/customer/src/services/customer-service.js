@@ -156,9 +156,6 @@ class CustomerService {
   }
 
   async SubscribeEvents(payload) {
-    // Now this service handle the communication with the other services done with some http call or some web hook or some message broker inside this service
-
-    // To communicate with this microservice from other they have to send 'event' name & then 'data' as a payload.
     const { event, data } = payload;
 
     const { userId, product, order, qty } = data;

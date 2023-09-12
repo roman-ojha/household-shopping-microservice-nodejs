@@ -9,7 +9,6 @@ const CustomerSchema = new Schema(
     salt: String,
     phone: String,
     address: [{ type: Schema.Types.ObjectId, ref: "address", require: true }],
-    // inside cart on monolithic we had reference to the product collection but right now we don't have the product model inside this microservice because of that we will going to remove the reference
     cart: [
       {
         product: {

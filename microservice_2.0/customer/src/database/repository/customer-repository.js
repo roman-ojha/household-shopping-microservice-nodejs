@@ -5,7 +5,6 @@ const {
   STATUS_CODES,
 } = require("../../utils/app-errors");
 
-//Dealing with data base operations
 class CustomerRepository {
   async CreateCustomer({ email, password, phone, salt }) {
     try {

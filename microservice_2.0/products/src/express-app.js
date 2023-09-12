@@ -12,7 +12,7 @@ module.exports = async (app) => {
   //api
   products(app);
 
-  // app Event Listener, we can call these event from other microservice using for now we have use API
+  // app Event Listener
   appEvent(app);
 
   // error handling

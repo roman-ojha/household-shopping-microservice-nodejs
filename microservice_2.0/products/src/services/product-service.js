@@ -71,18 +71,14 @@ class ProductService {
     }
   }
 
-  // So this service will return payload
   async GetProductPayload(userId, { productId, qty }, event) {
     const product = await this.repository.FindById(productId);
 
     if (product) {
-      // because to communicate with other service we have to pass 'event' & 'data' because of that we are constructing payload for that.
       const payload = {
         event: event,
         data: { userId, product, qty },
       };
-
-      // after payload constructed we can return the payload
       return FormateData(payload);
     } else {
       return FormateData({ error: "No product available" });

@@ -3,8 +3,6 @@ const UserAuth = require("./middlewares/auth");
 
 module.exports = (app) => {
   const service = new CustomerService();
-  // these are the customer api route but we don't need to use '/customer/signup' because '/customer' wil handled by the api gateway
-  // sometimes we might need to do a communication with other service like 'products' & 'shopping' services from the customer service in that case we need to have some bridge communication or some kind of we hook or some api/http call, we can integrate that service here we well
 
   app.post("/signup", async (req, res, next) => {
     try {
