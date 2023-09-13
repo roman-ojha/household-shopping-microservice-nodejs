@@ -63,4 +63,13 @@
         -> we will write our configuration file for reverse proxy under the './Proxy'
         -> first we will create Dockerfile where we will add docker code to run container from the nginx base image
 
+    *) Deploy application on AWS:
+        -> './04_Project_Queue.PNG'
+        -> for now we will deploy the application on aws elastic beanstalk but in future we will deploy the whole application on different different instances.
+        -> Keeping the database with other running server inside one single machine is not a good idea.
+        -> We will keep database in separate instance which will be locally accessible from other instances.
+        -> https://ap-south-1.console.aws.amazon.com/elasticbeanstalk/home?region=ap-south-1#/
+        -> for uploading our source file into elastic beanstalk we will first delete 'node_modules', 'package-lock.json', 'app_log'
+        -> and we will create zip file of all the service folder including docker compose file
+
 
