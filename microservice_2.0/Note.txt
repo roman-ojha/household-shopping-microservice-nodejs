@@ -49,7 +49,18 @@
             -> we will create new instance
             -> and grab the url and use it for .env.prod or for now we will use it for .env.dev
 
+    *) Nginx on project:
+        -> Nginx as a reverse proxy will help us to discover certain endpoints.
+        -> Currently our service are exposed publicly with a certain port number which is not the ideal process to deploy on the cloud.
+        -> Nginx will listen to the default port number. './02_Microservice_2.0.PNG'
+        -> But first we will dockerize the whole application then we can expose the host with the help of reserve proxy. './04_Microservice_Deployment.PNG'
+
+    *) Dockerizing the whole microservice:
+        -> First we will dockerize the all 3 services using Dockerfile './customer/Dockerfile', './shopping/Dockerfile', './products/Dockerfile'
+        -> After configuring Docker for whole 3 microservices and nignx we will now docker compose all the Dockerfiles 
+
     *) Setting up Nginx as reverse proxy:
-        -> https://youtu.be/T-xCylkjSf8?list=PLaLqLOj2bk9ZV2RhqXzABUP5QSg42uJEs&t=2723
+        -> we will write our configuration file for reverse proxy under the './Proxy'
+        -> first we will create Dockerfile where we will add docker code to run container from the nginx base image
 
 

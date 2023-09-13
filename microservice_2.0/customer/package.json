@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "env-cmd -f .env.dev nodemon src/index.js",
-    "start": "env-cmd -f .env.prod nodemon src/index.js"
+    "start": "node src/index.js"
   },
   "dependencies": {
     "amqplib": "^0.10.3",
